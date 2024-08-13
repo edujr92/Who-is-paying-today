@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is paying today?</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+        
+    body {
+        margin-top: 200px;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        background-color: #45a0492b;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+
+    input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+    }
+    
+    </style>
+</head>
+<body>
+    <h1>Who is paying today?</h1>
+    <div class="container">
+        <input type="text" id="yourName" placeholder="Enter your names, separated by commas" required>
+        <br><br>
+        <button class="button" onclick="randomName()">Randomize</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function whosPaying(names){
+            let randomIndex = Math.floor(Math.random() * names.length);
+            let selectedName = names[randomIndex];
+            return selectedName + " is going to pay!";
+        }
+
+        function randomName() {
+            let names = document.getElementById('yourName').value.split(',');
+            if (names.length > 0) {
+                let result = whosPaying(names);
+                document.getElementById('result').innerText = result;
+            } else {
+                document.getElementById('result').innerText = "Please enter at least one name.";
+            }
+        }
+    </script>
+</body>
+</html>
