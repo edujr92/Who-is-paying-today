@@ -1,3 +1,6 @@
+
+![WhoIsPayingToday](https://github.com/user-attachments/assets/ec2ddb7d-ac2e-4298-9f9d-1253cc8821c5)
+
 # Who is Paying Today?
 
 ## Description
